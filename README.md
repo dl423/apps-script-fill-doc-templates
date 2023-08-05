@@ -1,1 +1,1 @@
-A Google Apps Script program that make numerous copies of a Google Doc template, customizing the contents in each doc according to data in a Google Sheet. Has the option to save the resulting Google Docs documents as PDF.
+An Apps Script program that make numerous copies of a Google Doc template, customizing the contents in each doc according to data in a Google Sheet. Has the option to save the resulting Google Docs documents as PDF.
