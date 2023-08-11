@@ -4,7 +4,7 @@ DOC_TEMPLATE_ID = ''   //the doc template that has several placeholders to be re
 
 
 function Main() {
-
+  //Set up the folder workspace
   var folder = DriveApp.getFolderById(FOLDER_ID);
   var sheet = SpreadsheetApp.getActiveSheet();
   var pdfFolder = folder.createFolder('PDF_Files');
@@ -64,10 +64,8 @@ function FillInFile(item, folder, pdfFolder) {
   CreatePDFFile(doc, pdfFolder);
 }
 
-
+// Converts a file (e.g. Google Docs) into a PDF
 function CreatePDFFile(file, folder) {
-    //var file = DriveApp.getFileById(fileID);
-    //var folder = DriveApp.getFolderById(folderID); //folder to move PDFs into
     var theBlob = file.getBlob().getAs('application/pdf');
     var newPDFFile = folder.createFile(theBlob);
 
@@ -76,6 +74,7 @@ function CreatePDFFile(file, folder) {
     //newPDFFile.moveTo(folder);
 }
 
+// Obtains the index of the first empty row in column B
 function GetFirstEmptyRowByColumnArray(sheet) {
   var values = sheet.getRange('B:B').getValues();
   var ct = 0;
